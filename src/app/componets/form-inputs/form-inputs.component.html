@@ -1,0 +1,50 @@
+<form [formGroup]="profileForm">
+  <div class="form-container">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Choose Exit Data</mat-label>
+      <!-- #docregion toggle -->
+      <input matInput [matDatepicker]="picker" placeholder="dd/mm/yy" #pickerInput formControlName="exitData">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <!-- #enddocregion toggle -->
+        <mat-error *ngIf="profileForm.invalid">{{getErrorMessage(pickerInput.value)}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+      <mat-label>Enter Exit Price</mat-label>
+      <input matInput #exitPrice maxlength="10" placeholder="0.0" type="number" formControlName="exitPrice" required>
+      <mat-hint align="end">{{exitPrice.value?.length || 0}}/10</mat-hint>
+        <mat-error *ngIf="profileForm.controls['exitPrice']">
+            This field is reqired and should be number
+        </mat-error>
+    </mat-form-field>
+
+      <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+          <mat-label>Enter Entry Price</mat-label>
+          <input matInput #entryPrice maxlength="10" placeholder="0.0" type="number" formControlName="entryPrice" required>
+          <mat-hint align="end">{{entryPrice.value?.length || 0}}/10</mat-hint>
+          <mat-error *ngIf="profileForm.controls['entryPrice'].errors">
+              This field is reqired!
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Choose Entry Data</mat-label>
+          <!-- #docregion toggle -->
+          <input matInput [matDatepicker]="picker2" placeholder="dd/mm/yy" #pickerInput2 formControlName="entryData" required>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+          <mat-error *ngIf="profileForm.invalid">{{getErrorMessage(pickerInput2.value)}}</mat-error>
+      </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Profit</mat-label>
+      <input matInput #input maxlength="10" placeholder="profit" readonly formControlName="profit">
+    </mat-form-field>
+
+  </div>
+</form>
+<div class="container-button">
+    <button mat-flat-button color='accent' (click)='sendProfit()' [disabled]="profileForm.invalid">Send Price</button>
+</div>

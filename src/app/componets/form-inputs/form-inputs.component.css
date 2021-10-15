@@ -1,0 +1,14 @@
+.form-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.mat-form-field {
+  margin: 5px;
+}
+
+.container-button {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}

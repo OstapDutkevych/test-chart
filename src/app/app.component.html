@@ -1,0 +1,7 @@
+<div class="container">
+  <app-form-inputs (profit)="getProfit($event)" (dataTable)="getDataTable($event)"></app-form-inputs>
+  <div class="tableAndChart">
+    <app-table [dataTable]="dataTable"></app-table>
+    <line-chart [profit]='profit'></line-chart>
+  </div>
+</div>
