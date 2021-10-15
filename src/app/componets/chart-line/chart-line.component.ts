@@ -19,15 +19,15 @@ export class ChartLineComponent implements OnInit{
     public lineChartData: ChartDataSets[] = [
         { data: [65, 100,60,70,90, 50, 90,60,70], label: 'Series A' },
     ];
-    public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'];
 
     public lineChartOptions: { responsive: boolean } = {
         responsive: true,
     }
     public lineChartColors: Color[] = [
         {
-            borderColor: 'gray',
-            backgroundColor: 'rgba(255,0,0,0.3)',
+            borderColor: 'blue',
+            backgroundColor: 'rgba(219,28,187,0.3)',
         },
     ];
     public lineChartLegend = true;
@@ -36,6 +36,5 @@ export class ChartLineComponent implements OnInit{
 
     constructor() { }
 
-    ngOnInit() {
-    }
+    ngOnInit() {}
 }

@@ -1,14 +1,22 @@
-.form-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.mat-form-field {
-  margin: 5px;
-}
-
 .container-button {
   display: flex;
   justify-content: center;
   margin: 10px;
+}
+
+.form-container{
+  width: 100px;
+}
+
+.mat-form-field {
+  width: 200px;
+  height: 90px;
+}
+
+::ng-deep datepicker-value-example .mat-form-field-label {
+  color: #7272cb;
+}
+
+::ng-deep .mat-datepicker-toggle {
+  color: #da6565;
 }

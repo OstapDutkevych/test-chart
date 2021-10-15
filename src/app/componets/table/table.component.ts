@@ -1,9 +1,6 @@
 import {Component, Input} from '@angular/core';
-export interface PeriodicElement {
-    position: number;
-    month: number;
-    profit: string;
-}
+import {PeriodicElement} from "../../models";
+
 
 const ELEMENT_DATA: any[] = [];
 @Component({
@@ -14,7 +11,7 @@ const ELEMENT_DATA: any[] = [];
 
 
 export class TableComponent {
-    @Input() set dataTable(value : any){
+    @Input() set dataTable(value : PeriodicElement[]){
         this.dataSource = value;
     }
     displayedColumns: string[] = ['position', 'month', 'profit'];

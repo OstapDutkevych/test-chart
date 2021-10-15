@@ -1,5 +1,5 @@
   import { Component } from '@angular/core';
-  import {ProfitModel} from "./models";
+  import {PeriodicElement, ProfitModel} from "./models";
 
 @Component({
   selector: 'app-root',
@@ -8,12 +8,12 @@
 })
 export class AppComponent {
   profit: ProfitModel;
-  dataTable : any
+  dataTable : PeriodicElement[]
   getProfit(event: ProfitModel) {
     this.profit = event;
   }
 
-    getDataTable($event: any[]) {
+    getDataTable($event: PeriodicElement[]) {
         this.dataTable = $event;
     }
 }
